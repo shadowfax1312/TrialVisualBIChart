@@ -1,0 +1,181 @@
+{
+    "dataRoles": [{
+            "displayName": "Category Data",
+            "name": "category",
+            "kind": "Grouping"
+        },
+		
+        {
+            "displayName": "x1",
+            "name": "x1",
+            "kind": "Measure"
+        },
+		{
+            "displayName": "x2",
+            "name": "x2",
+            "kind": "Measure"
+        },
+		{
+            "displayName": "y1",
+            "name": "y1",
+            "kind": "Measure"
+        },
+		{
+            "displayName": "y2",
+            "name": "y2",
+            "kind": "Measure"
+        },
+        {
+            "displayName": "Tooltips",
+            "name": "Tooltips",
+            "kind": "Measure"
+        }
+    ],
+    "dataViewMappings": [{
+        "conditions": [{
+            "category": {
+                "max": 1
+            },
+            "x1": {
+                "max": 1
+            },
+			"x2": {
+                "max": 1
+            },
+			"y1": {
+                "max": 1
+            },
+			"y2": {
+                "max": 1
+            }
+        }],
+	
+		"categorical": {
+            "categories": {
+                "for": {
+                    "in": "category"
+                }
+            },
+            "values": {
+                "select": [{
+                    "bind": {
+                        "to": "x1"
+                    }
+                },
+					{
+                    "bind": {
+                        "to": "x2"
+                    }
+					},
+					{
+                    "bind": {
+                        "to": "y1"
+                    }
+					},
+					{
+                    "bind": {
+                        "to": "y2"
+                    }}
+                ]}
+	
+            }
+        }
+    ],
+    "objects": {
+        "enableAxis": {
+            "displayName": "Enable Axis",
+            "properties": {
+                "show": {
+                    "displayName": "Enable Axis",
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "colorSelector": {
+            "displayName": "Data Colors",
+            "properties": {
+                "fill": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "generalView": {
+            "displayName": "General View",
+            "properties": {
+                "opacity": {
+                    "displayName": "Bars Opacity",
+                    "type": {
+                        "integer": true
+                    }
+                },
+                "showHelpLink": {
+                    "displayName": "Show Help Button",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        },
+        "averageLine" :{
+            "displayName": "Average Line",
+            "objectCategory": 2,
+            "properties": {
+                "show": {
+                    "type": {
+                        "bool": true
+                    }
+                },
+                "displayName": {
+                    "type": {
+                        "text": true
+                    }
+                },
+                "fill": {
+                    "displayName": "Color",
+                    "type": {
+                        "fill": {
+                            "solid": {
+                                "color": true
+                            }
+                        }
+                    }
+                },
+                "showDataLabel": {
+                    "displayName": "Data label",
+                    "type": {
+                        "bool": true
+                    }
+                }
+            }
+        }
+    },
+    "tooltips": {
+        "supportedTypes": {
+            "default": true,
+            "canvas": true
+        },
+        "roles": [
+            "Tooltips"
+        ]
+    },
+    "supportsLandingPage": false
+}
